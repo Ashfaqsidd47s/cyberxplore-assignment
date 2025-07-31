@@ -15,6 +15,9 @@ This is a **full-stack file scanning application** that allows users to **upload
 
 ---
 
+🔗 [Project walkthrough loom link ](https://www.loom.com/share/2ea3ccde4689427d93d0be0a922a58c7?sid=3cbfcc41-ab32-4be6-84a5-9687a7330f70)
+
+
 ## 📸 Screenshots
 
 ### 🔼 Upload Page

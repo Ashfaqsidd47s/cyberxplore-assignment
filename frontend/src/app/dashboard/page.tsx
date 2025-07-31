@@ -82,7 +82,7 @@ export default function Dashboard() {
     const intervalId = setInterval(fetchFiles, 5000); // Fetch every 5 seconds
 
     return () => clearInterval(intervalId); 
-  }, );
+  },[] );
 
   // Filter and search logic
   const filteredFiles = files.filter((file) => {
