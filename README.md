@@ -3,7 +3,9 @@
 This is a **full-stack file scanning application** that allows users to **upload files**, automatically **queue them for scanning**, and **view live results** on a real-time dashboard.
 
 ## 📁 Project Structure
-
+- backend
+- file-scanning-worker
+- frontend 
 
 ---
 
@@ -30,8 +32,8 @@ To run the project locally, follow the steps below:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Ashfaqsidd47s/cyberxplore-assignment.git
+cd cyberxplore-assignment
 ```
 
 ### 2. Setup all three apps
