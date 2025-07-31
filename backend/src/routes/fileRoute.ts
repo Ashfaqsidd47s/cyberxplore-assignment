@@ -61,7 +61,6 @@ router.post('/upload', upload.single('file'), handleMulterError, async (req: Req
         const { originalname, buffer, mimetype } = req.file;
         const uniqueFilename = `${Date.now()}-${originalname}`;
 
-        console.log("step 1:Request recieved in api..")
         
         // Upload directly to ImageKit
         const response = await imageKit.upload({
@@ -69,7 +68,6 @@ router.post('/upload', upload.single('file'), handleMulterError, async (req: Req
             fileName: uniqueFilename,
             folder: "cyberx"
         });
-        console.log("step 2: uploaded to image kit..")
         
         const filepath = IMAGEKIT_PUBLIC_URL +  response.filePath
         
@@ -82,7 +80,6 @@ router.post('/upload', upload.single('file'), handleMulterError, async (req: Req
         });
         
         await newFile.save();
-        console.log("step 3: data saved to file..")
         
         // Queue file for scanning
         queueFileForScanning(newFile._id.toString(), response.url).catch(async (err) => {
@@ -90,7 +87,6 @@ router.post('/upload', upload.single('file'), handleMulterError, async (req: Req
             // Update file status to indicate failure
             await File.findByIdAndUpdate(newFile._id, { status: 'failed' });
         });
-        console.log("step 4: file sent for scanning..")
         
         res.json({ message: 'File uploaded successfully', file: newFile });
 
